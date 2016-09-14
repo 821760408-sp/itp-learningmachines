@@ -29,26 +29,11 @@ def rld(file_to_decode):
     with open(os.path.expanduser(os.path.expanduser(file_to_decode)), 'rb') as f:
         while True:
             chunk = f.readline().strip()
-            # chunk=f.read(2)
-            # print chunk
             if chunk != '':
-                # print chunk, type(chunk)
                 t = make_tuple(chunk)
                 decoded.extend(t[0] * t[1])
-                # decoded.extend(chunk[1]*int(chunk[0]))
-                # print chunk[1]
-                # print chunk[0]
-                # print 'int:', int(chunk[0])
-                # tmp+=1
             else:
                 break
-        # decoded_text=f.read(2)
-        # print decoded_text[0], decoded_text[1]
-        # while decoded_text != '':
-        #     decoded.extend(decoded_text[1] * int(decoded_text[0]))
-        #     # decoded.extend([decoded_text[1] for i in range(int(decoded_text[0]))])
-        #     decoded_text=f.read(2)
-        #     # print decoded_text[0], decoded_text[1]
 
     decoded=''.join(decoded)
     return decoded
